@@ -8,3 +8,5 @@ HTML: ```<input type="text" class="time-picker">```
 JQUERY: ```<script type="text/javascript" src="jquery-2.1.4.min.js"></script>```
 
 JS INCLUDE: ```<script type="text/javascript" src="timepicker.js"></script>```
+
+<b>View Demo Here: http://clandestine8.github.io/GMD-SimpleFancy-Timepicker/timepicker/timepicker.html </b>
