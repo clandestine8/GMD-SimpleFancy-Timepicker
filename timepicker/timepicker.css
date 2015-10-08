@@ -1,0 +1,302 @@
+/**
+ * Created by clandestine8 on 10/7/2015.
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic);
+.timepicker {
+
+    height: 400px;
+    width: 250px;
+    background-color: #444444;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.4);
+    /*transform-origin: 50% 50%;*/
+    position: relative;
+    top: calc(50% - 200px);
+    left: calc(50% - 125px);
+}
+.timepicker .time_face{
+    z-index: 99900;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    left: 0px;
+    bottom: 25px;
+    background-color: #888888;
+}
+.timepicker .time_digits{
+
+    width: 100%;
+    height: 125px;
+    position: relative;
+    background-color: #EEEEEE;
+}
+.timepicker .time_face .face .circle {
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    top: 2.5%;
+    left: 2.5%;
+    vertical-align: middle;
+    background-color: #EEEEEE;
+    border-radius: 50%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.timepicker .time_face .face .circle .hours, .timepicker .time_face .face .circle .minutes{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: relative;
+    transition: 0.5s ease-out;
+
+}
+.timepicker .time_face .face .circle .hours.active, .timepicker .time_face .face .circle .minutes.active {
+
+    display: block;
+    transition: 0.5s ease-out;
+}
+
+.nums {
+    display: inline-block;
+    position: absolute;
+    font-size: 16px;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    transition: 0.3s;
+    z-index: 99902;
+    line-height: 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.nums.active{
+    background-color: #444444;
+    transition: 0.3s;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.nums.select{
+    background-color: #76553C;
+    transition: 0.3s;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.nums.mins {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nums.hour {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nums.twelve {
+    transform: translate(0px,-100px);
+}
+.nums.one {
+    transform: translate(50px,-86px);
+}
+.nums.two {
+    transform: translate(85px,-50px);
+}
+.nums.three {
+    transform: translate(100px,0px);
+}
+.nums.four {
+    transform: translate(86px,50px);
+}
+.nums.five {
+    transform: translate(50px,86px);
+}
+.nums.six {
+    transform: translate(2px,100px);
+}
+.nums.seven {
+    transform: translate(-49px,85px);
+}
+.nums.eight {
+    transform: translate(-85px,49px);
+}
+.nums.nine {
+    transform: translate(-98px,0px);
+}
+.nums.ten {
+    transform: translate(-86px,-50px);
+}
+.nums.eleven {
+    transform: translate(-50px,-86px);
+}
+html {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+}
+.values {
+
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+
+}
+.values .hour{
+    position:absolute;
+    height: 70px;
+    width: 5px;
+    transform: translate(122.5px, 55px);
+    transform-origin: bottom;
+    background-color: #372D26;
+    z-index: 99903;
+    transition: 0.5s
+}
+.values .minute{
+    position:absolute;
+    height: 85px;
+    width: 3px;
+    transform: translate(123.5px, 40px);
+    transform-origin: bottom;
+    background-color: #372D26;
+    z-index: 99903;
+    transition: 0.5s
+}
+.values .minute.active, .values .hour.active{
+    background-color: rgba(255, 116, 10, 1.0);
+
+}
+.values .grab {
+    display: none;
+    position: relative;
+    top: -5px;
+    left: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+    transition: 0.3s;
+    overflow: visible;
+
+}
+.values .grab:hover, .values .grab:active {
+    position: relative;
+    top: -30px;
+    left: -13px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000000;
+    transition: 0.3s;
+}
+.values .am, .values .pm {
+    width: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+    position: absolute;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.values .am {
+    left: 5px;
+    top: 5px;
+}
+.values .pm {
+    right: 5px;
+    top: 5px;
+}
+.values .am.select, .values .pm.select {
+    opacity: 1;
+    text-shadow: 0 0 0.06em rgba(0, 0, 0, 0.8);
+    color: rgba(255, 116, 10, 1.0);
+}
+.buttons {
+    width:100%;
+    height: 100%;
+}
+.buttons .now  {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    left:0;
+    bottom: 10px;
+    width: 33%;
+    font-size: 24px;
+    font-weight: 700px;
+    text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+    color:  #cccccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buttons .set  {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    right:0;
+    bottom: 10px;
+    width: 33%;
+    font-size: 24px;
+    font-weight: 700px;
+    text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+    color:  #cccccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buttons .now:hover,  .buttons .set:hover{
+    text-shadow: 0 0 0.4em rgba(200, 200, 200, 0.5);
+    transition: 0.3s;
+    color: #FF740A;
+}
+
+
+.time_digits .hours, .time_digits .mins, .time_digits .div {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 85px;
+    cursor: default;
+}
+.time_digits .hours {
+    text-align: right;
+    width:100px;
+    left: 15px;
+
+}
+.time_digits .mins {
+    text-align: left;
+    width:100px;
+    right: 15px;
+
+}
+.time_digits .div {
+    text-align: center;
+    width:20px;
+    right: 115px;
+    font-size: 80px;
+}
+.time_digits .mins.active, .time_digits .hours.active {
+    text-shadow: 0 0 0.06em rgba(0, 0, 0, 0.8);
+    color: rgba(255, 116, 10, 1.0);
+
+}
